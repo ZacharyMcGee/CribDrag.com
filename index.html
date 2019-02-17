@@ -13,6 +13,39 @@
 </head>
 
 <body>
+  <div class="header">
+  </div>
+
+  <div class="crib-drag-form">
+    <div class="crib-word">
+      <label for="ciphertext">Crib Word</label>
+      <input class="cribword" type="text" id="cribword" name="ciphertext" placeholder="Crib Word">
+    </div>
+    <div class="cipher-input">
+      <label for="ciphertext">Cipher Text 1</label>
+      <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" placeholder="Hex Message">
+
+      <label for="ciphertext">Cipher Text 2</label>
+      <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" placeholder="Hex Message">
+    </div>
+</div>
+<div class="crib-slider">
+  <div class="xor-ciphers">
+    <table id="xor-ciphers-table" class="xor-ciphers-table">
+      <tr id="xor-ciphers">
+      </tr>
+    </table>
+  </div>
+  <div class="box">
+      <table class="text-table">
+        <tr id="crib-hex-table">
+        </tr>
+      </table>
+      <p class="crib-result" id="crib-result">Drag Me!</p>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
   <script src="js/crib.js"></script>
 </body>
 </html>
