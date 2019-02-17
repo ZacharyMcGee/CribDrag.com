@@ -1,0 +1,95 @@
+.text-table {
+  padding-top: 35px;
+}
+
+.text-table td {
+  border: 1px solid black;
+  width: 20px;
+}
+
+.xor-ciphers-table td {
+  border: 1px solid black;
+  width: 20px;
+}
+
+.box {
+  height: 30px;
+  float: left;
+  margin: 0 auto;
+  margin-top: -30px;
+  background-color: #0000001a;
+  border: 1px solid #000;
+  width: auto;
+}
+
+.box p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.text {
+  margin-top: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.crib-slider {
+  margin-top: 50px;
+}
+
+.opac {
+  opacity: .8;
+}
+
+.move-cursor {
+  cursor: move;
+}
+
+
+.crib-word {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.cipher-input {
+  width: 50%;
+  display: inline-block;
+}
+
+.xor-ciphers {
+
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+crib-drag-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
