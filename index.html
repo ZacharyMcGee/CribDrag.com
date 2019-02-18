@@ -14,35 +14,47 @@
 
 <body>
   <div class="header">
+    <img src="img/logo.png">
   </div>
 
+<div class="content">
   <div class="crib-drag-form">
     <div class="crib-word">
       <label for="ciphertext">Crib Word</label>
-      <input class="cribword" type="text" id="cribword" name="ciphertext" placeholder="Crib Word">
+      <input class="cribword" type="text" id="cribword" name="ciphertext" value="Hello">
     </div>
     <div class="cipher-input">
       <label for="ciphertext">Cipher Text 1</label>
-      <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" placeholder="Hex Message">
+      <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" value="3b101c091d53320c000910">
 
       <label for="ciphertext">Cipher Text 2</label>
-      <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" placeholder="Hex Message">
+      <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" value="071d154502010a04000419">
+
+      <label for="ciphertext">Cipher Text 1 ⊕ Cipher Text 2</label>
+      <input class="ciphertext" type="text" id="ciphertextxorresult" name="ciphertext" value="3b101c091d53320c000910" disabled>
     </div>
 </div>
-<div class="crib-slider">
+<div id="crib-slider" class="crib-slider">
   <div class="xor-ciphers">
     <table id="xor-ciphers-table" class="xor-ciphers-table">
       <tr id="xor-ciphers">
       </tr>
     </table>
   </div>
-  <div class="box">
-      <table class="text-table">
+  <div id="box" class="box">
+    <img class="xor-image" src="img/xor.png">
+      <table id="text-table" class="text-table">
         <tr id="crib-hex-table">
+        </tr>
+      </table>
+      <hr class="custom-hr">
+      <table id="result-table" class="result-table">
+        <tr id="result-hex-table">
         </tr>
       </table>
       <p class="crib-result" id="crib-result">Drag Me!</p>
   </div>
+</div>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
