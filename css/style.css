@@ -1,24 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+html {
+
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #536169;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.header img {
+  margin-top: 15px;
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 .text-table {
   padding-top: 35px;
 }
 
 .text-table td {
   border: 1px solid black;
+  border-radius: 3px;
   width: 20px;
 }
 
 .xor-ciphers-table td {
   border: 1px solid black;
+  border-radius: 3px;
+  width: 20px;
+}
+
+.result-table {
+  padding-top: 0px;
+}
+
+.result-table td {
+  border: 1px solid black;
+  border-radius: 3px;
   width: 20px;
 }
 
 .box {
-  height: 30px;
+  height: 28px;
   float: left;
   margin: 0 auto;
   margin-top: -30px;
   background-color: #0000001a;
-  border: 1px solid #000;
+  border: 1px solid #3b3b3b;
   width: auto;
 }
 
@@ -33,10 +75,13 @@
   text-align: center;
   font-size: 28px;
   letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .crib-slider {
   margin-top: 50px;
+  width: auto;
+  display: inline-block;
 }
 
 .opac {
@@ -49,14 +94,31 @@
 
 
 .crib-word {
-  width: 50%;
+  width: calc(50% - 40px);
   display: inline-block;
   float: left;
 }
 
 .cipher-input {
+  float: right;
   width: 50%;
   display: inline-block;
+}
+
+.custom-hr {
+
+}
+
+.xor-image {
+  position: absolute;
+  top: 30px;
+  margin-left: -25px;
+}
+
+.xor-result-image {
+  position: absolute;
+  top: 30px;
+  margin-left: -25px;
 }
 
 .xor-ciphers {
