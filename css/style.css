@@ -21,7 +21,7 @@ body {
 }
 
 .header img {
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .content {
@@ -49,6 +49,10 @@ body {
   width: 20px;
 }
 
+.xor-ciphers-table {
+  margin-left: 1px;
+}
+
 .xor-ciphers-table td {
   border: 1px solid #cfcfcf;
   border-radius: 3px;
@@ -66,13 +70,14 @@ body {
 }
 
 .box {
-  height: 28px;
+  height: 27px;
   float: left;
   margin: 0 auto;
   margin-top: -30px;
-  background-color: #24d1ed33;
-  border: 1px solid #545454;
+  background-color: #51525333;
+  border: 1px solid #b3b3b3;
   width: auto;
+  top: 2px;
 }
 
 .box p {
@@ -90,8 +95,13 @@ body {
 }
 
 .crib-slider {
-  margin-top: 50px;
-  width: auto;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #efefef;
+  -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
+  -moz-box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
+  box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
+  border: 1px solid #cfcfd0;
   display: inline-block;
 }
 
@@ -117,8 +127,8 @@ body {
 }
 
 .custom-hr {
-  border-top: 1px solid #a8a8a8;
-  border-bottom: 1px solid #f3f3f3;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: none;
 }
 
 .xor-image {
@@ -137,14 +147,61 @@ body {
 
 }
 
+.messages {
+  margin-top: 20px;
+}
+
+.message1 {
+  display: block-inline;
+  float: left;
+  width: 50%;
+}
+
+.message2 {
+  display: block-inline;
+  float: left;
+  width: 50%;
+}
+
+.message-textarea-left {
+  width: 95%;
+  float: left;
+  resize: none;
+  padding: 5px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.message-textarea-left:disabled {
+  background-color: #efefef;
+}
+
+.message-textarea-right {
+  width: 95%;
+  float: right;
+  resize: none;
+  padding: 5px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.message-textarea-right:disabled {
+  background-color: #efefef;
+}
+
 input[type=text], select {
   width: 100%;
   padding: 8px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  color: #6d6d6d;
+  border: 1px solid #e6e6e6;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type=text]:disabled {
+  background-color: #efefef;
 }
 
 input[type=submit] {
@@ -162,8 +219,7 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-crib-drag-form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+.crib-drag-form {
+  height: 220px;
+  border-bottom: 1px solid #e6e6e6;
 }
