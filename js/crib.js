@@ -101,14 +101,14 @@ var screenSize = $(window).width();
 grid_size = (26);
 var sliderIndex = 0;
 var currentX = 0;
-var rightBound = document.getElementById('crib-slider').offsetWidth - document.getElementById('text-table').offsetWidth;
+var rightBound = document.getElementById('xor-ciphers-table').offsetWidth - document.getElementById('text-table').offsetWidth;
 
 $(window).resize(function(){
   updateSliderPos();
 });
 
 function updateSliderPos(){
-  rightBound = document.getElementById('crib-slider').offsetWidth - document.getElementById('text-table').offsetWidth;
+  rightBound = document.getElementById('xor-ciphers-table').offsetWidth - document.getElementById('text-table').offsetWidth;
   screenSize = $(window).width();
   $(".box").draggable({ containment: [(screenSize*.2) + 20, 0, (rightBound + screenSize*.2) + 20, 0] });
 }
@@ -126,7 +126,7 @@ $(".box ")
             var xPos = offset.left;
             console.log("index: " + sliderIndex);
             console.log("this: " + sliderIndex*grid_size);
-            sliderIndex = (xPos - ((40+screenSize)*.2))/grid_size;
+            sliderIndex = (xPos - ((41+screenSize)*.2))/grid_size;
             xor_result = xor_hex(cipherhex.substring(((sliderIndex) * 2), ((sliderIndex) * 2) + cribhex.length), cribhex);
             document.getElementById("crib-result").innerHTML = hex_to_ascii(xor_result);
             updateResultTable(xor_result);
