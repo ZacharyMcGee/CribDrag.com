@@ -110,7 +110,7 @@ $(window).resize(function(){
 function updateSliderPos(){
   rightBound = document.getElementById('crib-slider').offsetWidth - document.getElementById('text-table').offsetWidth;
   screenSize = $(window).width();
-  $(".box").draggable({ containment: [screenSize*.2, 0, rightBound + screenSize*.2, 0] });
+  $(".box").draggable({ containment: [(screenSize*.2) + 20, 0, (rightBound + screenSize*.2) + 20, 0] });
 }
 
 $(".box ")
@@ -124,11 +124,13 @@ $(".box ")
             }
             var offset = $(this).offset();
             var xPos = offset.left;
-            sliderIndex = (xPos - screenSize*.2)/grid_size;
+            console.log("index: " + sliderIndex);
+            console.log("this: " + sliderIndex*grid_size);
+            sliderIndex = (xPos - ((40+screenSize)*.2))/grid_size;
             xor_result = xor_hex(cipherhex.substring(((sliderIndex) * 2), ((sliderIndex) * 2) + cribhex.length), cribhex);
             document.getElementById("crib-result").innerHTML = hex_to_ascii(xor_result);
             updateResultTable(xor_result);
-        }, containment: [screenSize*.2, 0, rightBound + screenSize*.2, 0], axis: "x", grid: [ grid_size, grid_size ] })
+        }, containment: [(screenSize*.2) + 20, 0, (rightBound + screenSize*.2) + 20, 0], axis: "x", grid: [ grid_size, grid_size ] })
 	.on("mouseover", function(){
   	$( this ).addClass("move-cursor")
 	})
