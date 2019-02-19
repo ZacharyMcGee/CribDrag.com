@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
 html {
-
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 body {
   margin: 0px;
   padding: 0px;
   font-family: 'Open Sans', sans-serif;
+  background-color: #f6f6f6;
 }
 
 .header {
@@ -26,6 +29,14 @@ body {
   margin-bottom: 20px;
   margin-left: 20%;
   margin-right: 20%;
+  padding: 20px;
+  min-height: 500px;
+  background-color: #FFF;
+  border-radius: 3px;
+  font-size: 14px;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
+  box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
 }
 
 .text-table {
@@ -33,13 +44,13 @@ body {
 }
 
 .text-table td {
-  border: 1px solid black;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
   width: 20px;
 }
 
 .xor-ciphers-table td {
-  border: 1px solid black;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
   width: 20px;
 }
@@ -49,7 +60,7 @@ body {
 }
 
 .result-table td {
-  border: 1px solid black;
+  border: 1px solid #cfcfcf;
   border-radius: 3px;
   width: 20px;
 }
@@ -59,8 +70,8 @@ body {
   float: left;
   margin: 0 auto;
   margin-top: -30px;
-  background-color: #0000001a;
-  border: 1px solid #3b3b3b;
+  background-color: #24d1ed33;
+  border: 1px solid #545454;
   width: auto;
 }
 
@@ -106,13 +117,14 @@ body {
 }
 
 .custom-hr {
-
+  border-top: 1px solid #a8a8a8;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 .xor-image {
   position: absolute;
-  top: 30px;
-  margin-left: -25px;
+  top: 29px;
+  margin-left: -20px;
 }
 
 .xor-result-image {
@@ -127,7 +139,7 @@ body {
 
 input[type=text], select {
   width: 100%;
-  padding: 12px 20px;
+  padding: 8px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
