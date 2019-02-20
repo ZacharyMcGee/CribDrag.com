@@ -7,7 +7,7 @@
   <title>Crib Drag - Online Crib Dragging Tool</title>
   <meta name="description" content="Online Crib Dragging Tool">
   <meta name="author" content="Zachary McGee">
-
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -36,12 +36,12 @@
 </div>
 <div class="messages">
   <div class="message1">
-    <textarea class="message-textarea-left" rows="4" cols="50" disabled>
+    <textarea id="message1" class="message-textarea-left" rows="4" cols="50" disabled>
       Message 1 Results
     </textarea>
   </div>
   <div class="message2">
-    <textarea class="message-textarea-right" rows="4" cols="50" disabled>
+    <textarea id="message2" class="message-textarea-right" rows="4" cols="50" disabled>
       Message 2 Results
     </textarea>
   </div>
@@ -60,16 +60,21 @@
         </tr>
       </table>
       <hr class="custom-hr">
+      <img class="xor-result-image" src="img/result.png">
       <table id="result-table" class="result-table">
         <tr id="result-hex-table">
         </tr>
       </table>
-      <p class="crib-result" id="crib-result">Drag Me!</p>
+      <div class="crib-result">
+        <p id="crib-result">Drag Me!</p>
+      </div>
+      <button class="button" onclick="correctSegment()"><i class="fas fa-check"></i> Correct</button>
   </div>
 </div>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <script src="js/crib.js"></script>
 </body>
 </html>
