@@ -74,10 +74,11 @@ body {
   float: left;
   margin: 0 auto;
   margin-top: -30px;
-  background-color: #51525333;
-  border: 1px solid #b3b3b3;
+  background-color: #50505033;
+  border: 1px solid #b9b9b9;
   width: auto;
   top: 2px;
+  border-radius: 3px;
 }
 
 .box p {
@@ -98,11 +99,19 @@ body {
   margin-top: 20px;
   width: 100%;
   background-color: #efefef;
-  -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
-  -moz-box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
-  box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.06);
-  border: 1px solid #cfcfd0;
+  border: 1px solid #e6e6e6;
   display: inline-block;
+  border-radius: 3px;
+}
+
+.crib-result {
+  background-color: #cfcfcf;
+  border-radius: 3px;
+  border: 1px solid #b9b9b9;
+  margin-top: 7px;
+  padding-left: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .opac {
@@ -129,18 +138,23 @@ body {
 .custom-hr {
   border-top: 1px solid #e6e6e6;
   border-bottom: none;
+  margin-left: 5px;
 }
 
 .xor-image {
   position: absolute;
-  top: 29px;
-  margin-left: -20px;
+  top: 30px;
+  margin-left: -5px;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
 
 .xor-result-image {
   position: absolute;
-  top: 30px;
-  margin-left: -25px;
+  top: 66px;
+  margin-left: -5px;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
 
 .xor-ciphers {
@@ -217,6 +231,19 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: 1px solid #3d8940;
+  color: white;
+  padding: 3px 0px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 0px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 100%;
 }
 
 .crib-drag-form {
