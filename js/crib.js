@@ -13,6 +13,22 @@ function cribdrag() {
   //console.log(cribword);
 }
 
+function copyMessage1(){
+  var copyText = document.getElementById("pwd_spn");
+  var textArea = document.createElement("textarea");
+  textArea.value = copyText.textContent;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("Copy");
+  textArea.remove();
+}
+
+function copyMessage2(){
+  var copyText = document.getElementById("message1");
+  copyText.select();
+  document.execCommand("copy");
+}
+
 document.getElementById("ciphertext1").addEventListener('input', function (evt) {
   updateXORTable();
   updateXORResultText();
@@ -108,6 +124,10 @@ function updateResultTable() {
   }
 }
 
+function updateBruteForce(){
+
+}
+
 $(window).resize(function(){
   updateSliderPos();
 });
@@ -122,25 +142,38 @@ function resetMessage1() {
   document.getElementById("message1").value = "Message 1 Results";
 }
 
+function resetMessage2() {
+  document.getElementById("message2").value = "Message 2 Results";
+}
+
 function correctSegment() {
   maxlength = document.getElementById("ciphertextxorresult").value.length / 2;
+  cribsegment = document.getElementById("cribword").value;
+
   var segment = document.getElementById("crib-result").textContent;
   if(document.getElementById("message1").value == "Message 1 Results"){
     var emptystr = "";
     var message1 = "";
+    var message2 = "";
     for(var i = 0; i < maxlength; i++) {
       emptystr = emptystr.concat("_");
     }
     message1 = emptystr;
+    message2 = emptystr;
   }
   else
   {
     var message1 = document.getElementById("message1").value;
+    var message2 = document.getElementById("message2").value;
   }
   message1 = message1.substring(0, sliderIndex) + segment + message1.substring(sliderIndex + segment.length, maxlength);
+  message2 = message2.substring(0, sliderIndex) + cribsegment + message2.substring(sliderIndex + segment.length, maxlength);
+
   document.getElementById("message1").value = " ";
+  document.getElementById("message2").value = " ";
 
   document.getElementById("message1").value = message1;
+  document.getElementById("message2").value = message2;
   console.log("HEY " + message1);
 }
 
@@ -186,6 +219,7 @@ $(".box")
 
   function setup() {
     resetMessage1();
+    resetMessage2();
     updateXORTable();
     updateCribTable();
     updateSliderPos();
@@ -194,3 +228,4 @@ $(".box")
   }
 
   setup();
+  new ClipboardJS('.copy-image');
