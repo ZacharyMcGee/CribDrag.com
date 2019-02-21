@@ -14,38 +14,52 @@
 
 <body>
   <div class="header">
-    <img src="img/logo.png">
+    <a href="index.html"><img src="img/logo.png"></a>
   </div>
 
 <div class="content">
   <div class="crib-drag-form">
     <div class="crib-word">
-      <label for="ciphertext">Crib Word</label>
-      <input class="cribword" type="text" id="cribword" name="ciphertext" value="Hello">
+      <div class="crib-drag-form-left">
+        <label for="ciphertext">Cipher Text 1</label>
+        <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" value="3b101c091d53320c000910">
+
+        <label for="ciphertext">Crib Word</label>
+        <input class="cribword" type="text" id="cribword" name="ciphertext" value="Hello">
+      </div>
     </div>
+
     <div class="cipher-input">
-      <label for="ciphertext">Cipher Text 1</label>
-      <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" value="3b101c091d53320c000910">
+      <div class="crib-drag-form-right">
+        <label for="ciphertext">Cipher Text 2</label>
+        <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" value="071d154502010a04000419">
 
-      <label for="ciphertext">Cipher Text 2</label>
-      <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" value="071d154502010a04000419">
-
-      <label for="ciphertext">Cipher Text 1 ⊕ Cipher Text 2</label>
-      <input class="ciphertext" type="text" id="ciphertextxorresult" name="ciphertext" value="3b101c091d53320c000910" disabled>
+        <label for="ciphertext">Cipher Text 1 ⊕ Cipher Text 2</label>
+        <input class="ciphertext" type="text" id="ciphertextxorresult" name="ciphertext" value="3b101c091d53320c000910" disabled>
+      </div>
     </div>
-</div>
+  </div>
 <div class="messages">
   <div class="message1">
-    <textarea id="message1" class="message-textarea-left" rows="4" cols="50" disabled>
+    <div class="copy-image">
+    <img class="copy-image" data-clipboard-action="copy" data-clipboard-target="#message1" src="img/copy.png">
+    <span class="copy-to-clipboard">Copy to Clipboard</span>
+  </div>
+    <textarea id="message1" class="message-textarea-left" rows="4" cols="50">
       Message 1 Results
     </textarea>
   </div>
   <div class="message2">
-    <textarea id="message2" class="message-textarea-right" rows="4" cols="50" disabled>
+    <textarea id="message2" class="message-textarea-right" rows="4" cols="50">
       Message 2 Results
     </textarea>
+    <div class="copy-image" style="right: 20%;margin-right: 20px;">
+    <img class="copy-image" data-clipboard-action="copy" data-clipboard-target="#message2" src="img/copy.png">
+    <span class="copy-to-clipboard">Copy to Clipboard</span>
   </div>
-  </div>
+</div>
+<div class="brute-results">
+</div>
 <div id="crib-slider" class="crib-slider">
   <div class="xor-ciphers">
     <table id="xor-ciphers-table" class="xor-ciphers-table">
@@ -68,13 +82,14 @@
       <div class="crib-result">
         <p id="crib-result">Drag Me!</p>
       </div>
-      <button class="button" onclick="correctSegment()"><i class="fas fa-check"></i> Correct</button>
+      <button class="button" onclick="correctSegment()"><i class="fas fa-check fa-xs"></i> Correct</button>
+    </div>
   </div>
-</div>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
   <script src="js/crib.js"></script>
 </body>
 </html>
