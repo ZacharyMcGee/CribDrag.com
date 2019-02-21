@@ -30,10 +30,11 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   padding: 20px;
-  min-height: 500px;
+  min-height: 640px;
   background-color: #FFF;
   border-radius: 3px;
   font-size: 14px;
+  color: #6d6d6d;
   -webkit-box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
   -moz-box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
   box-shadow: 0px 0px 2px 0px rgba(143,143,143,0.47);
@@ -96,6 +97,8 @@ body {
 }
 
 .crib-slider {
+  float: left;
+  display: inline-block;
   margin-top: 20px;
   width: 100%;
   background-color: #efefef;
@@ -124,7 +127,7 @@ body {
 
 
 .crib-word {
-  width: calc(50% - 40px);
+  width: 50%;
   display: inline-block;
   float: left;
 }
@@ -157,6 +160,37 @@ body {
   filter: alpha(opacity=30);
 }
 
+.copy-image {
+  position: absolute;
+  display: inline-block;
+}
+
+.copy-image img {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.copy-image .copy-to-clipboard {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 2px 0;
+  border-radius: 6px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: absolute;
+  z-index: 1;
+}
+.copy-image:hover .copy-to-clipboard{
+  visibility: visible;
+}
+
 .xor-ciphers {
 
 }
@@ -178,6 +212,8 @@ body {
 }
 
 .message-textarea-left {
+  color: #6d6d6d;
+  background-color: #efefef;
   width: 95%;
   float: left;
   resize: none;
@@ -191,6 +227,8 @@ body {
 }
 
 .message-textarea-right {
+  color: #6d6d6d;
+  background-color: #efefef;
   width: 95%;
   float: right;
   resize: none;
@@ -205,7 +243,7 @@ body {
 
 input[type=text], select {
   width: 100%;
-  padding: 8px 20px;
+  padding: 8px 5px;
   margin: 8px 0;
   display: inline-block;
   color: #6d6d6d;
@@ -229,13 +267,14 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+input[type=text]:focus {
+  box-shadow: 0 0 5px #aee3ec;
+  border: 1px solid #aee3ec;
 }
 
 .button {
-  background-color: #4CAF50;
-  border: 1px solid #3d8940;
+  background-color: #8CCF8F;
+  border: 1px solid #76c079;
   color: white;
   padding: 3px 0px;
   text-decoration: none;
@@ -244,9 +283,37 @@ input[type=submit]:hover {
   cursor: pointer;
   border-radius: 3px;
   width: 100%;
+  transition: all .2s;
+}
+
+.button:hover {
+  background-color: #62C967;
+  border: 1px solid #58ae5c;
+  transition: all .2s;
 }
 
 .crib-drag-form {
-  height: 220px;
+  height: 150px;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.crib-drag-form-left {
+  width: 98%;
+  float:left;
+}
+
+.crib-drag-form-right {
+  width: 98%;
+  float: right;
+}
+
+.brute-results {
+  width: 100%;
+  float: right;
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  background-color: #fff;
+  height: 165px;
 }
