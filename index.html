@@ -15,6 +15,12 @@
 <body>
   <div class="header">
     <a href="index.html"><img src="img/logo.png"></a>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="howto.html">How-To</a></li>
+    </ul>
   </div>
 
 <div class="content">
@@ -59,6 +65,9 @@
   </div>
 </div>
 <div class="brute-results">
+  <table id="brute-results-table" class="brute-results-table">
+
+  </table>
 </div>
 <div id="crib-slider" class="crib-slider">
   <div class="xor-ciphers">
@@ -80,9 +89,9 @@
         </tr>
       </table>
       <div class="crib-result">
-        <p id="crib-result">Drag Me!</p>
+        <p id="crib-result"></p><button class="button" onclick="correctSegment()"><i class="fas fa-check fa-xs"></i></button>
+
       </div>
-      <button class="button" onclick="correctSegment()"><i class="fas fa-check fa-xs"></i> Correct</button>
     </div>
   </div>
 </div>
