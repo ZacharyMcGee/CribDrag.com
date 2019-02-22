@@ -32,16 +32,19 @@ function copyMessage2(){
 document.getElementById("ciphertext1").addEventListener('input', function (evt) {
   updateXORTable();
   updateXORResultText();
+  updateBruteForce();
 });
 
 document.getElementById("ciphertext2").addEventListener('input', function (evt) {
   updateXORTable();
   updateXORResultText();
+  updateBruteForce();
 });
 
 document.getElementById("cribword").addEventListener('input', function (evt) {
   updateCribTable();
   updateResultTable();
+  updateBruteForce();
 });
 
 function hex_to_ascii(str) {
@@ -105,7 +108,6 @@ function updateCribTable() {
 }
 
 function updateResultTable() {
-  console.log("RESULT");
   document.getElementById('box').style.width = "auto";
   var cribhex = ascii_to_hex(document.getElementById("cribword").value);
   var cipherhex = "";
@@ -125,7 +127,33 @@ function updateResultTable() {
 }
 
 function updateBruteForce(){
+  var table = document.getElementById("brute-results-table");
+  var maxlength = document.getElementById("xor-ciphers-table").getElementsByTagName("td").length;
+  var cribhex = ascii_to_hex(document.getElementById("cribword").value);
+  var cipherhex = document.getElementById("ciphertextxorresult").value;
 
+  table.innerHTML = "";
+  for(var i = 0; i < maxlength - (cribhex.length / 2) + 1; i++){
+    result = xor_hex(cipherhex.substring(((i) * 2), ((i) * 2) + cribhex.length), cribhex);
+    var spacing = "";
+    for(var j = 0; j < (cribhex.length / 2) * i * 2; j++){
+      spacing = spacing.concat("&nbsp;");
+    }
+    var bruteResults = "Position [" + (i + 1) + "]: " + spacing + hex_to_ascii(result);
+    var row = table.insertRow(i);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = bruteResults;
+  }
+}
+
+function selectBruteRow(index) {
+  var row = document.getElementById("brute-results-table").getElementsByTagName("td");
+  if(!row[index].classList.contains("highlight-td")) {
+    for(var i = 0; i < row.length; i++){
+      row[i].classList.remove('highlight-td');
+    }
+    row[index].classList.toggle("highlight-td");
+  }
 }
 
 $(window).resize(function(){
@@ -174,12 +202,11 @@ function correctSegment() {
 
   document.getElementById("message1").value = message1;
   document.getElementById("message2").value = message2;
-  console.log("HEY " + message1);
 }
 
 function setSliderIndex(){
   var xPos = $(".box").offset().left;
-  sliderIndex = (xPos - ((41+screenSize)*.2))/grid_size;
+  sliderIndex = Math.floor((xPos - ((41+screenSize)*.2))/grid_size);
 }
 
 function setResult() {
@@ -189,13 +216,9 @@ function setResult() {
 $(".box")
   .draggable({ drag: function(){
             updateSliderPos();
-
             setSliderIndex();
-            console.log("index: " + sliderIndex);
-            console.log("this: " + sliderIndex*grid_size);
-
-
             updateResultTable();
+            selectBruteRow(sliderIndex);
         }, containment: [(screenSize*.2) + 20, 0, (rightBound + screenSize*.2) + 20, 0], axis: "x", grid: [ grid_size, grid_size ] })
 	.on("mouseover", function(){
   	$( this ).addClass("move-cursor")
@@ -205,11 +228,8 @@ $(".box")
       .removeClass("move-cursor")
       .addClass("grab-cursor")
       .addClass("opac");
-
-  	$(" .text ").hide();
-
+  	$(".text").hide();
 	})
-
 	.on("mouseup", function(){
   	$( this )
       .removeClass("grab-cursor")
@@ -225,6 +245,8 @@ $(".box")
     updateSliderPos();
     setSliderIndex();
     updateResultTable();
+    updateBruteForce();
+    selectBruteRow(0);
   }
 
   setup();
