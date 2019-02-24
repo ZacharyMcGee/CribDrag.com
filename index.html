@@ -18,17 +18,21 @@
 
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="howto.html">How-To</a></li>
+      <li><a href="about.html">About Crib Dragging</a></li>
+      <li><a href="one-time-pad.html">One Time Pad Generator</a></li>
+      <li><a href="https://github.com/ZacharyMcGee/CribDrag">Source Code</a></li>
     </ul>
   </div>
 
 <div class="content">
+  <div class="content-info">
+    <h3>Interactive Crib Dragging Tool</h3>
+  </div>
   <div class="crib-drag-form">
     <div class="crib-word">
       <div class="crib-drag-form-left">
         <label for="ciphertext">Cipher Text 1</label>
-        <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" value="3b101c091d53320c000910">
+        <input class="ciphertext" type="text" id="ciphertext1" name="ciphertext" value="3b000f1e0a543c0a0b5d5612">
 
         <label for="ciphertext">Crib Word</label>
         <input class="cribword" type="text" id="cribword" name="ciphertext" value="Hello">
@@ -38,32 +42,32 @@
     <div class="cipher-input">
       <div class="crib-drag-form-right">
         <label for="ciphertext">Cipher Text 2</label>
-        <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" value="071d154502010a04000419">
+        <input class="ciphertext" type="text" id="ciphertext2" name="ciphertext" value="3604100b45464b260b505158">
 
         <label for="ciphertext">Cipher Text 1 ⊕ Cipher Text 2</label>
-        <input class="ciphertext" type="text" id="ciphertextxorresult" name="ciphertext" value="3b101c091d53320c000910" disabled>
+        <input class="ciphertext" type="text" id="ciphertextxorresult" name="ciphertext" value="0d041f154f12772c000d074a" disabled>
       </div>
     </div>
   </div>
 <div class="messages">
   <div class="message1">
-    <div class="copy-image">
-    <img class="copy-image" data-clipboard-action="copy" data-clipboard-target="#message1" src="img/copy.png">
-    <span class="copy-to-clipboard">Copy to Clipboard</span>
-  </div>
     <textarea id="message1" class="message-textarea-left" rows="4" cols="50">
       Message 1 Results
     </textarea>
+    <div class="copy-image-1">
+      <img class="copy-image-1" data-clipboard-action="copy" data-clipboard-target="#message1" src="img/copy.png">
+      <span class="copy-to-clipboard">Copy to Clipboard</span>
+    </div>
   </div>
   <div class="message2">
     <textarea id="message2" class="message-textarea-right" rows="4" cols="50">
       Message 2 Results
     </textarea>
-    <div class="copy-image" style="right: 20%;margin-right: 20px;">
-    <img class="copy-image" data-clipboard-action="copy" data-clipboard-target="#message2" src="img/copy.png">
-    <span class="copy-to-clipboard">Copy to Clipboard</span>
+    <div class="copy-image-2" style="right: 20%;margin-right: 20px;">
+      <img class="copy-image-2" data-clipboard-action="copy" data-clipboard-target="#message2" src="img/copy.png">
+      <span class="copy-to-clipboard">Copy to Clipboard</span>
+    </div>
   </div>
-</div>
 <div class="brute-results">
   <table id="brute-results-table" class="brute-results-table">
 
