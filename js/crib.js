@@ -237,7 +237,16 @@ $(".box")
       .addClass("move-cursor");
 	});
 
+  function defaultText() {
+    document.getElementById("ciphertext1").value = "3b000f1e0a543c0a0b5d5612";
+    document.getElementById("ciphertext2").value = "3604100b45464b260b505158";
+    document.getElementById("ciphertextxorresult").value = "0d041f154f12772c000d074a";
+    document.getElementById("cribword").value = "Hello";
+
+  }
+
   function setup() {
+    defaultText();
     resetMessage1();
     resetMessage2();
     updateXORTable();
