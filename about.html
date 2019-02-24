@@ -1,0 +1,212 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Crib Drag - Online Crib Dragging Tool</title>
+  <meta name="description" content="Online Crib Dragging Tool">
+  <meta name="author" content="Zachary McGee">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="header">
+    <a href="index.html"><img src="img/logo.png"></a>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Crib Dragging</a></li>
+      <li><a href="one-time-pad.html">One Time Pad Generator</a></li>
+            <li><a href="https://github.com/ZacharyMcGee/CribDrag">Source Code</a></li>
+    </ul>
+  </div>
+
+<div class="content">
+  <div class="content-info">
+    <h3>About Crib Dragging</h3>
+  </div>
+  <p>The <a href="https://en.wikipedia.org/wiki/One-time_pad">one-time pad</a> is perfectly secure
+    encryption technique, assuming that these three conditions are satisfied:<br><br>
+    • The key(pad) is delivered securely without interception.<br>
+    • <b>The key(pad) is used only once. *</b><br>
+    • The key(pad) is truley random.<br><br>
+
+    A crib drag attack takes advantage of the vulnerability of reusing a pad.</p>
+
+    <div class="sub-content-info">
+      <h4>The One-Time Pad</h4>
+    </div>
+    <p>Similar to the caesar cipher, by using modular addition we combine the key and message together, but
+      instead of shifting by just one number, we shift each message<sub>i</sub> by key<sub>i</sub> then modulus 26.<br><br>
+
+      Caesar cipher - Message: <b>HELLO</b>, Key: <b>5</b><br>
+      <table class="tg">
+        <tr>
+          <th class="tg-xldj">Original Message</th>
+          <th class="tg-xldj"><span style="font-weight:bold">H</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">E</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">L</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">L</span></th>
+          <th class="tg-0lax"><span style="font-weight:bold">O</span></th>
+        </tr>
+        <tr>
+          <td class="tg-0pky">Message to Int</td>
+          <td class="tg-0pky">(7+5) Mod 26</td>
+          <td class="tg-0pky">(4+5) Mod 26</td>
+          <td class="tg-0pky">(11+5) Mod 26</td>
+          <td class="tg-0pky">(11+5) Mod 26</td>
+          <td class="tg-0lax">(14+5) Mod 26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">(Message<sub>i</sub> + 5) Mod 26</td>
+          <td class="tg-0lax">12</td>
+          <td class="tg-0lax">9</td>
+          <td class="tg-0lax">16</td>
+          <td class="tg-0lax">16</td>
+          <td class="tg-0lax">19</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Encrypted Message</td>
+          <td class="tg-0lax"><span style="font-weight:bold">M</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">J</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">Q</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">Q</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">T</span></td>
+        </tr>
+      </table>
+      <br>
+      With the caesar cipher encryption technique we see that we just shifted each letter in the message(HELLO)
+      to the right by the key(5 spaces), this resulted in the final message "MJQQT". This method is very unsecure
+      because we can brute force the encypted message with a worst case of 26(the max amount of shifts possible).
+      This type of mapping is considered one-to-one mapping because each letter is mapped to exactly one other letter (e.g. "L" always transforms to "Q").
+      Therefore, once we have the key(5), we can always assume that an encrypted message containing Q always refers to L.
+      This is not the case for One-Time Pads, we will see that below.
+      <br><br>
+      One-Time Pad - Message: <b>HELLO</b>, Key: <b>MYKEY</b><br>
+      <br>
+      <div class="otp-table">
+        <div class="left-table">
+      <table class="tg">
+        <tr>
+          <th class="tg-xldj">Original Message</th>
+          <th class="tg-xldj"><span style="font-weight:bold">H</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">E</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">L</span></th>
+          <th class="tg-xldj"><span style="font-weight:bold">L</span></th>
+          <th class="tg-0lax"><span style="font-weight:bold">O</span></th>
+        </tr>
+        <tr>
+          <td class="tg-0pky">Message to Int</td>
+          <td class="tg-0pky">(7+12) Mod 26</td>
+          <td class="tg-0pky">(4+24) Mod 26</td>
+          <td class="tg-0pky">(11+10) Mod 26</td>
+          <td class="tg-0pky">(11+4) Mod 26</td>
+          <td class="tg-0lax">(14+24) Mod 26</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">(Message<sub>i</sub> + key<sub>i</sub>) Mod 26</td>
+          <td class="tg-0lax">19</td>
+          <td class="tg-0lax">2</td>
+          <td class="tg-0lax">21</td>
+          <td class="tg-0lax">15</td>
+          <td class="tg-0lax">12</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Encrypted Message</td>
+          <td class="tg-0lax"><span style="font-weight:bold">T</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">C</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">V</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">P</span></td>
+          <td class="tg-0lax"><span style="font-weight:bold">M</span></td>
+        </tr>
+      </table>
+      </div>
+      <div class="right-table">
+        <table class="tg">
+  <tr>
+    <th class="tg-xldj">Key</th>
+    <th class="tg-xldj"><span style="font-weight:bold">M</span></th>
+    <th class="tg-xldj"><span style="font-weight:bold">Y</span></th>
+    <th class="tg-xldj"><span style="font-weight:bold">K</span></th>
+    <th class="tg-xldj"><span style="font-weight:bold">E</span></th>
+    <th class="tg-0lax"><span style="font-weight:bold">Y</span></th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Int</td>
+    <td class="tg-0pky">12</td>
+    <td class="tg-0pky">24</td>
+    <td class="tg-0pky">10</td>
+    <td class="tg-0pky">4</td>
+    <td class="tg-0lax">24</td>
+  </tr>
+</table>
+</div>
+      </div>
+      <p><br>With a one-time pad we see that each letter in the message is shifted by a new value. The
+      complexity of a one-time pad is 26<sup>n</sup>, but this is not what makes a one time pad so secure, even if
+      we brute force all possiblities, we still do not know which key is correct. For example:
+
+      If we receive the message "HMM" that has been encrypted by a one-time pad, the worst case is 26<sup>3</sup> possiblities.
+      So we brute force every combination, but which result is the decrypted message? This will result in every combination of
+      three letters including: "HEY", "CAT", "BYE". We cannot possiblity know what the original message is without the key.
+      </p>
+      <div class="sub-content-info">
+        <h4>Crib Dragging</h4>
+  </div>
+  <p>For computers it is faster to employ the XOR operation for one-time pads. For this example, we will be using strings
+    that are converted to HEX.
+    <br><br>
+    Assume we have two messages: "Hello World!" and "Easy 2 Crack", we are going to ecrypt them with the key "secretkey123".
+    The first thing we are going to do is convert them from ASCII to HEX format.
+    <br><br>
+    <b>Message 1 ASCII</b>: Hello World!<br>
+    <b>Message 2 ASCII</b>: Easy 2 Crack<br>
+    <b>Key ASCII</b>: secretkey123<br>
+    <br>
+    <b>Message 1 HEX</b>: 48656c6c6f20576f726c6421<br>
+    <b>Message 2 HEX</b>: 45617379203220437261636b<br>
+    <b>Key HEX</b>: 7365637265746b6579313233<br>
+    <br>
+    Then we can encrypt each HEX string with the key by using an XOR operation.<br>
+    <br>
+    <b>Message 1 ⊕ Key</b>: 48656c6c6f20576f726c6421 ⊕ 7365637265746b6579313233 = Cipher 1<br>
+    <b>Message 2 ⊕ Key</b>: 45617379203220437261636b ⊕ 7365637265746b6579313233 = Cipher 2<br>
+    <br>
+    <b>Encrypted Message 1(Cipher 1)</b>: 3b000f1e0a543c0a0b5d5612<br>
+    <b>Encrypted Message 2(Cipher 2)</b>: 3604100b45464b260b505158<br>
+    <br>
+    Now, for future reference, we can XOR Cipher 1 and Cipher 2 together.<br>
+    <br>
+    <b>Cipher 1 ⊕ Cipher 2</b>: 0d041f154f12772c000d074a<br>
+    <br>
+    Let us assume that Alice is sending the messages Cipher 1 and Cipher 2 to Bob, but Eve has intercepted them,
+    how can Eve decrypt the messages? Well if the messages were both encrypted with seperate random one-time pads
+    then it would be impossible for Eve to decrypt the messages, but what if Eve knows that Alice and Bob have been
+    reusing their one-time pad? This is where crib dragging comes in.<br>
+    <br>
+    Eve can attempt to guess words(Crib Words) to drag along the XOR'd messages. For example:
+
+    If Eve guesses "Hello" as their Crib Word, first Eve will want to convert this to HEX.
+    Hello then becomes: 48656c6c6f, now Eve can "drag" this word across the XOR'd messages <body>
+    XORing it with them.
+    <br><br>
+
+    <b>0d041f154f</b>12772c000d074a<br>
+    <b>48656c6c6f</b><br>
+    _____________<br>
+    <b>4561737920</b><br>
+    <br>
+    If Eve now converts the result 4561737920 to ASCII, Eve will see that the result ended up being "Easy ".
+    This is a good result, and is probably the correct answer(We already know the answer, but Eve doesn't), this is because "Easy " is a readable
+    word, usually if your crib word fails it will give you gibberish. Since "Easy " is probably the start Cipher 2 now Eve can continue guessing until the messages are decrypted.
+    </p>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+</body>
+</html>
