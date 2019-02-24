@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Crib Drag - Online Crib Dragging Tool</title>
+  <meta name="description" content="Online Crib Dragging Tool">
+  <meta name="author" content="Zachary McGee">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="header">
+    <a href="index.html"><img src="img/logo.png"></a>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Crib Dragging</a></li>
+      <li><a href="one-time-pad.html">One Time Pad Generator</a></li>
+      <li><a href="https://github.com/ZacharyMcGee/CribDrag">Source Code</a></li>
+    </ul>
+  </div>
+
+<div class="content">
+  <div class="content-info">
+    <h3>One-Time Pad Generator</h3>
+  </div>
+  <div class="one-time-pad">
+    <div class="otp-input">
+      <div class="otp-message-left">
+        <label for="messagetext">Message</label>
+        <input type="text" id="messagetext" name="messagetext" placeholder="Enter you message..." value="">
+      </div>
+      <div class="otp-message-right">
+        <label for="keytext">Key</label>
+        <input type="text" id="keytext" name="keytext" placeholder="Enter a key..." value="">
+      </div>
+    </div>
+      <div class="conversion-results">
+        <div class="otp-message-left">
+          <label for="messagehex">Message Hex</label>
+          <input type="text" id="messagehex" name="messagehex" value="" disabled>
+        </div>
+        <div class="otp-message-right">
+          <label for="keyhex">Key Hex</label>
+          <input type="text" id="keyhex" name="keyhex" value="" disabled>
+        </div>
+        <div class="otp-xor-results">
+            <label for="otpresult">Encrypted Message</label>
+            <input type="text" id="otpresult" name="otpresult" value="">
+        </div>
+      </div>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="js/otp.js"></script>
+</body>
+</html>
